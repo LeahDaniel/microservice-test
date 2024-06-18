@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('counters', function (Blueprint $table) {
             $table->id();
-            $table->string('route_name')->unique()->nullable();
             $table->integer('count')->default(0);
         });
     }

@@ -13,12 +13,12 @@ class Counter extends Model
 
     public $timestamps = false;
 
-    public static function incrementCount(string $route)
+    public static function incrementCount()
     {
-        $counter = self::firstOrCreate([
-            'route_name' => $route
-        ]);
+        $counter = self::firstOrCreate();
 
         $counter->increment('count');
+
+        return $counter;
     }
 }

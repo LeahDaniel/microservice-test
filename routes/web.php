@@ -1,11 +1,10 @@
 <?php
 
-use App\Models\Counter;
+use App\Http\Controllers\CounterController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    Counter::incrementCount('home');
     return view('welcome');
-})->name('home');
+});
 
-Route::get('/counter/{routeName}', 'CounterController@getCount');
+Route::get('/counter', [CounterController::class, 'getCount']);

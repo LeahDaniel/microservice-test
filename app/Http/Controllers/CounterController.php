@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Counter;
 
-abstract class CounterController
+
+class CounterController extends Controller
 {
-    public function getCount(string $routeName)
+    public function getCount()
     {
-        return Counter::firstWhere('route_name', $routeName)->count;
+        $counter = Counter::incrementCount();
+        return $counter->count;
     }
 }
