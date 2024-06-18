@@ -7,8 +7,8 @@ spec:
   scaleTargetRef:
     name: {{ include "example.name" . }}
   pollingInterval: 5
-  minReplicas: {{ .Values.autoscaling.minReplicas }}
-  maxReplicas: {{ .Values.autoscaling.maxReplicas }}
+  minReplicaCount: {{ .Values.autoscaling.minReplicas }}
+  maxReplicaCount: {{ .Values.autoscaling.maxReplicas }}
   fallback:
     failureThreshold: 30
     replicas: {{ .Values.autoscaling.fallbackReplicas }}
